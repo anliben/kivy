@@ -1,0 +1,15 @@
+<Home>:
+    BoxLayout:
+
+    Camera:
+        id: camera
+        index: 0
+        resolution: (640, 480)
+        play: True
+    
+    Button:
+        text: 'Capture'
+        on_press: camera.export_to_png("test.png")
+        size_hint: .2, .2
+        color: 212, 32, 230, .9
+
