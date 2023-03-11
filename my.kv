@@ -1,15 +1,31 @@
 <Home>:
-    BoxLayout:
+    FloatLayout:
+        size_hint: 1, 1
+        pos_hint: {'center_x': .5, 'center_y': .5}
 
-    Camera:
-        id: camera
-        index: 0
-        resolution: (640, 480)
-        play: True
-    
-    Button:
-        text: 'Capture'
-        on_press: camera.export_to_png("test.png")
-        size_hint: .2, .2
-        color: 212, 32, 230, .9
+        FitImage:
+            source: 'dragon.jpg'
+            keep_ratio: True
+            size_hint: .4, .4
+            pos_hint: {'center_x': .5, 'center_y': .745545654}
+        
+        MDTextField:
+            id:email
+            hint_text: "Coloque seu email"
+            size_hint: .4, None
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            validator: "email"
 
+        MDTextField:
+            id:password
+            hint_text: "Coloque sua senha"
+            size_hint: .4, None
+            pos_hint: {'center_x': .5, 'center_y': .4}
+            password: True
+
+        MDRaisedButton:
+            id: login
+            text: "Entrar"
+            size_hint: .4, None
+            pos_hint: {'center_x': .5, 'center_y': .3}
+            on_release: root.login()
